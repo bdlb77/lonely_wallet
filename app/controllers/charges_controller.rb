@@ -1,5 +1,5 @@
 class ChargesController < ApplicationController
-    def new
+    def success
     end
     
     def create
