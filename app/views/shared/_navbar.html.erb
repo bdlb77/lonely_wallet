@@ -13,7 +13,9 @@
         <%= link_to  "login", new_user_registration_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
+      <% if current_user %>
         <%= link_to 'dashboard', dashboard_soldiers_user_path(current_user), class: 'nav-link' %>
+      <% end %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
