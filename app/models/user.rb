@@ -9,6 +9,12 @@ class User < ApplicationRecord
   has_many :soldiers_donations
   accepts_nested_attributes_for :addresses
 
+  before_save :army_id, presence: true, if: :is_soldier?
+
   enum role: [:soldier, :donor]
+
+  def is_soldier?
+    self.soldier?
+  end
 end
 
