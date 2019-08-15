@@ -1,4 +1,8 @@
-<h1><%= @soldier[:name] %></h1>
+<div class="container-fluid d-flex flex-column  align-items-center">
+  <h4 class="text-center mt-5">Money Recieved</h4>
+  <h2 class="text-center mt-1"><%= number_to_currency(@total) %></h2>
+  <%= link_to  "Send to 10 Bis", '#', method: :get, class: 'btn btn-lg btn-success text-center' %>
+</div>
 
 <%= form_tag charges_path do %>
     <article>
