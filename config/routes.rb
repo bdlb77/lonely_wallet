@@ -10,4 +10,13 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :donors do
+    resources :users do
+      member do
+        get 'dashboard'
+        get 'receipts'
+      end
+    end
+  end
 end
