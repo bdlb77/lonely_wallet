@@ -3,4 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :addresses
+  has_many :donations
+  has_many :soldiers_donations
+  accepts_nested_attributes_for :addresses
+
+  enum role: [:soldier, :donor]
 end
+
