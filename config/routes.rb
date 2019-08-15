@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 
   namespace :soldiers do 
     resources :users do
@@ -15,13 +16,6 @@ Rails.application.routes.draw do
     resources :users do
       member do
         get 'dashboard'
-      end
-    end
-  end
-
-  namespace :donors do
-    resources :users do
-      member do
         get 'receipts'
       end
     end

@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.home{
+	min-height: 93vh;
+	width: 99vw;
+	background-color: #ADB5BD;
+}
+
+.home_text{
+	text-align: center;
+	h1{
+		font-size: 4rem;
+	}
+	p{
+		font-size: 1.5rem;	
+	}
+}
+
+
+.home_img{
+	img{
+		width: 110%;
+		height: auto;
+	}
+}
