@@ -5,9 +5,12 @@
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
+@import "bootswatch/dist/litera/variables";
+@import "bootswatch/dist/litera/bootswatch";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
