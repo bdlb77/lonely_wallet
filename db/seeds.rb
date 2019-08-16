@@ -69,10 +69,13 @@ puts "Finished generating addresses"
 
 puts "Generating donations"
 
-one_million = Donation.create!(amount: 1000000,
+bill_one_million = Donation.create!(amount: 1000000,
 														 user: bill)
 
-half_mil = Donation.create!(amount: 500000,
+bill_half_mil = Donation.create!(amount: 500000,
+														 user: bill)
+
+elon_half_mil = Donation.create!(amount: 500000,
 														user: elon)
 
 puts "Finished generating donations"
@@ -80,10 +83,13 @@ puts "Finished generating donations"
 puts "Generating tax receipts"
 
 bill_receipt = TaxReceipt.create!(number: 100101,
-																	donation: one_million)
+																	donation: bill_one_million)
 
 elon_receipt = TaxReceipt.create!(number: 100102,
-																	donation: half_mil)
+																	donation: elon_half_mil)
+
+bill_receipt = TaxReceipt.create!(number: 100103,
+																	donation: bill_half_mil)
 
 puts "Finished generating tax receipts"
 
