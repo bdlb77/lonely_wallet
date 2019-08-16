@@ -12,7 +12,7 @@
         </div>
         <footer class="donor__dashboard__sidebar-bottom d-flex flex-column justify-content-end pb-5 align-items-center">
           <h6>Total Donated</h6>
-          <h2 class="total">$100,000</h2>
+          <h2 class="total">$<%= number_with_precision(@total_donation, :precision => 2, :delimiter => ',') %> </h2>
         </footer>
       </div>
     </div>
