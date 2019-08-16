@@ -5,15 +5,17 @@ class Donors::UsersController < ApplicationController
 		@donations_count= current_user.donations.count
 		soldiers = current_user.donations.map(&:donated_soldiers)
 		@total_soldiers = soldiers&.flatten.uniq.count
-	end
-
-	def receipts
 		@address = Address.find_by(user_id: current_user.id)
 		@donations = Donation.where(user: current_user)
 		@receipts = []
+		@total_donation = 0
 		@donations.each do |donation|
 			@receipts << TaxReceipt.find_by(donation_id: donation)
+			@total_donation += donation.amount
 		end
+	end
+
+	def receipts
 	end
 
 end
