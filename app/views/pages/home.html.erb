@@ -6,7 +6,7 @@
 					<h1>Lonely Wallet</h1>
 					<p>Bringing Donors closer to Lone Soldiers.</p>
 					<% if current_user&.donor? %>
-						<%= link_to "Donate Now", dashboard_donors_user_path(current_user) , class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
+						<%= link_to "Dashboard", dashboard_donors_user_path(current_user) , class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
 					<% elsif current_user&.soldier? %>
 						<%= link_to "View Balance", dashboard_soldiers_user_path(current_user) , class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
 					<% else %>
