@@ -18,7 +18,7 @@
 				    <p class="card-text mb-1"> <%= @address.city %>, <%= @address.state %> </p>
 				    <p class="card-text"> <%= @address.zip %> </p>
 				    <div class="d-flex justify-content-center">				 
-				    	<h4 class="card-text"> Donated to <em> Lonely Wallet </em> in the amount of <strong> $<%= number_with_precision(receipt.donation.amount, :precision => 2, :delimiter => ',') %> </strong> </h4>
+				    	<h4 class="card-text text-break"> Donated to <em> Lonely Wallet </em> in the amount of <strong> $<%= number_with_precision(receipt.donation.amount, :precision => 2, :delimiter => ',') %> </strong> </h4>
 				    	<div class="d-flex align-items-end">
 				    		<%= link_to "Download", root_path, class: 'btn btn-primary' %>
 				    	</div>
