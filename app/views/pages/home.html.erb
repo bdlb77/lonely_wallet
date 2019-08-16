@@ -5,7 +5,6 @@
 				<div class="home_text pt-5 text-left">
 					<h1>Lonely Wallet</h1>
 					<p>Bringing Donors closer to Lone Soldiers.</p>
-				</div>
 					<% if current_user&.donor? %>
 						<%= link_to "Donate Now", dashboard_donors_user_path(current_user) , class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
 					<% elsif current_user&.soldier? %>
