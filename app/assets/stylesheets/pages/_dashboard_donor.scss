@@ -38,6 +38,8 @@
     }
     &-content {
       &-section {
+        height: calc(100vh - 58px - 2rem);
+        overflow-y: auto;
         display: none;
         &.section_active {
           display: block;
