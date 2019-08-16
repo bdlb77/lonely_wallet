@@ -17,7 +17,10 @@
 				    <p class="card-text mb-1"> <strong> Biling address </strong>: <%= @address.address %> </p>
 				    <p class="card-text mb-1"> <%= @address.city %>, <%= @address.state %> </p>
 				    <p class="card-text"> <%= @address.zip %> </p>
+				    <div class="d-flex justify-content-center">
 				    <h4 class="card-text"> Donated to <strong> Lonely Wallet </strong> in the amount of <%= receipt.donation.amount %>$ </h4>
+				    <%= link_to "Download", root_path %>
+				    </div>
 				  </div>
 				</div>
 			</div>
