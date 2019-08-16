@@ -3,8 +3,21 @@
     <div class="col-md-3">
       <div class="donor__dashboard__sidebar pt-2">
         <header class="donor__dashboard__sidebar-head d-flex flex-column mx-2 pt-2">
-          <%= link_to  "Donate", '#', class: 'btn btn-primary btn-lg' %>
-          <i class="fas fa-user-alt align-self-center"></i>         
+          <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
+              <% end %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's subscription"
+                    data-amount="50000"
+                    data-locale="auto"
+                    data-label="Donate">
+                    </script>
+          <% end %>        
         </header>
         <div class="donor__dashboard__sidebar-tabs">
           <h4 class="text-center sidebar-tab my-4 tab_active" id="overview_tab">Overview</h4>
@@ -29,28 +42,4 @@
   </div>
 </div>
 
-
-<div class="container-fluid d-flex flex-column  align-items-center">
-  <h4 class="text-center mt-5">Money Recieved</h4>
-  <h2 class="text-center mt-1"><%= number_to_currency(@total) %></h2>
-  <%= link_to  "Send to 10 Bis", '#', method: :get, class: 'btn btn-lg btn-success text-center' %>
-</div>
-
-<%= form_tag charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
-      <% end %>
-      <label class="amount">
-        <span>Amount: $5.00</span>
-      </label>
-    </article>
-  
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="A month's subscription"
-            data-amount="500"
-            data-locale="auto"></script>
-  <% end %>
+ 
