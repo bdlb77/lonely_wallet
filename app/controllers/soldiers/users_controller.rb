@@ -2,7 +2,7 @@ class Soldiers::UsersController < ApplicationController
     before_action :is_soldier?, only: [:dashboard]
   def dashboard
     @user = current_user
-    @total =  @user.soldiers_donations.map(&:amount_per_soldier).sum
+    @total = @user.soldiers_donations.map(&:amount_per_soldier).sum
   end
 
   private 
