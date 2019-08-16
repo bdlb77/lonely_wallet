@@ -1,6 +1,5 @@
-<h2>Sign up</h2>
+<h2 class= "text-center">Sign up as:</h2>
 
-<%= render "devise/shared/links" %>
 
 <script>
 const sign_up_soldier = document.querySelector('#sign_up_soldier');
@@ -57,7 +56,7 @@ const sign_up_donor = document.querySelector('#sign_up_donor');
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
+            <%= f.button :submit, "Sign up", class: 'btn btn-primary btn-lg mb-2' %>
           </div>
         <% end %>
       </div>
@@ -105,10 +104,11 @@ const sign_up_donor = document.querySelector('#sign_up_donor');
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
+            <%= f.button :submit, "Sign up", class: 'btn btn-primary btn-lg mb-2' %>
           </div>        
         <% end %>
       </div>
     </div>
   </div>
+<h4>Already signed up?  <%= render "devise/shared/links" %> </h4>
 </div>
