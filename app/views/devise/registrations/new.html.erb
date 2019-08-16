@@ -53,7 +53,7 @@ const sign_up_donor = document.querySelector('#sign_up_donor');
             </div>
           </div>
 
-          <%= f.input :role, as: :hidden, value: 1 %>
+          <%= f.input :role, as: :hidden, input_html: { value: 'soldier' }%>
           </div>
 
           <div class="form-actions">
@@ -101,7 +101,7 @@ const sign_up_donor = document.querySelector('#sign_up_donor');
                 <%= f.input :last_name, required: true, input_html: { autocomplete: "last-name" } %>
               </div>
             </div>
-            <%= f.input :role, as: :hidden, value: 1 %>
+            <%= f.input :role, as: :hidden, input_html: { value: 'donor' } %>
           </div>
 
           <div class="form-actions">

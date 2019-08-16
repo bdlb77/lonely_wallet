@@ -1,0 +1,31 @@
+<div class="donor__dashboard">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="donor__dashboard__sidebar pt-2">
+        <header class="donor__dashboard__sidebar-head d-flex flex-column mx-2 pt-2">
+          <%= link_to  "Donate", '#', class: 'btn btn-primary btn-lg' %>
+          <i class="fas fa-user-alt align-self-center"></i>         
+        </header>
+        <div class="donor__dashboard__sidebar-tabs">
+          <h4 class="text-center sidebar-tab my-4 tab_active" id="overview_tab">Overview</h4>
+          <h4 class="text-center my-4 sidebar-tab" id="receipt_tab">Receipts</h4>
+        </div>
+        <footer class="donor__dashboard__sidebar-bottom d-flex flex-column justify-content-end pb-5 align-items-center">
+          <h6>Total Donated</h6>
+          <h2 class="total">$100,000</h2>
+        </footer>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <section class="donor__dashboard____sidebar-content pt-4">
+        <div class="donor__dashboard__sidebar-content-section" id="donor_dash_receipts">
+        <%= render  "receipts", receipts: @receipts %>
+        </div>
+        <div class="donor__dashboard__sidebar-content-section section_active" id="donor_dash_overview">
+         <%= render 'overview', donations_count: @donations_count%>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
