@@ -51,3 +51,28 @@
     }
   }
 }
+
+.stripe-button-el {
+  width: 120px;
+  border-radius: 0.2em !important;
+  border: 0 !important;
+  background-image: none !important;
+  background-color: #0000ff !important;
+  font-weight: normal !important;
+  margin-left: 35%;
+
+}
+
+.stripe-button-el span {
+  font-family: sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal !important;
+  font-size: 1em !important;
+  border-radius: 0.2em !important;
+  border: 0 !important;
+  background-image: none !important;
+  background: #0000ff !important;
+  background-color: #0000ff !important;
+  height: 7vh !important;
+  line-height: 65px !important;
+}

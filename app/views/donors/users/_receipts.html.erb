@@ -1,9 +1,4 @@
-<% receipts.each_with_index do |receipt, index| %>
-	<p> <%= index+1 %>. Receipt number: <%= receipt.number %> </p>
-	<p> Amount you donated is: <%= receipt.donation.amount %>$ </p>
-	<br>
-	<%= link_to "download", download_pdf_donors_user_path %>
-<% end %>
+
 <div class="container my-4">
 	<h1 class="text-center mb-4"> Your receipts </h1>
 	<div class="row">
@@ -27,8 +22,8 @@
 				    <p class="card-text"> <%= @address.zip %> </p>
 				    <br>
 				    	<h4 class="card-text text-break"> Donated to <em> Lonely Wallet </em> in the amount of <strong> $<%= number_with_precision(receipt.donation.amount, :precision => 2, :delimiter => ',') %> </strong> </h4>
-				    	<div class="text-right">
-				    		<%= link_to "Download", root_path, class: 'btn btn-primary' %>				   
+						<div class="text-right">
+							<%= link_to "download", download_pdf_donors_user_path, class: 'btn btn-primary' %>			   
 				    	</div>
 				  </div>
 				</div>
