@@ -6,9 +6,6 @@
 					<h1>Lonely Wallet</h1>
 					<p>Bringing Donors closer to Lone Soldiers.</p>
 				</div>
-				<div class="home_text pt-5">
-					<h1>Donate to a Lone Soldier</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore reprehenderit adipisci voluptatibus nisi facilis consectetur. Optio est quasi aperiam deserunt distinctio, tenetur? Impedit minima totam perferendis quo, beatae voluptatem corrupti!</p>
 					<% if current_user&.donor? %>
 						<%= link_to "Donate Now", dashboard_donors_user_path(current_user) , class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
 					<% elsif current_user&.soldier? %>
