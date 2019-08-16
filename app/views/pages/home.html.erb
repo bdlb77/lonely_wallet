@@ -5,9 +5,13 @@
 				<div class="home_text pt-5 text-left">
 					<h1>Lonely Wallet</h1>
 					<p>Bringing Donors closer to Lone Soldiers.</p>
-				</div>
-				<div class="home_text pt-5">
-					<%= link_to "Donate Now", "#", class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
+					<% if current_user&.donor? %>
+						<%= link_to "Donate Now", dashboard_donors_user_path(current_user) , class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
+					<% elsif current_user&.soldier? %>
+						<%= link_to "View Balance", dashboard_soldiers_user_path(current_user) , class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
+					<% else %>
+						<%= link_to "Get Started!", new_user_registration_path , class: "btn btn-primary btn-lg mt-2", style: "font-size: 1.5rem;"%>
+					<% end %>
 				</div>
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-6">
@@ -36,7 +40,7 @@
 					<%= image_tag  "undraw_make_it_rain", height: 200 %>
 				</div>
 				<div class="home__description-body mt-4">
-					<h5>Don't worry about your money getting lost in organizations. Your donation will be automatically be sent to Lone Soldiers directly.</h5>
+					<h5>Don't worry about your money getting lost in organizations. Your donation will be automatically sent to Lone Soldiers directly.</h5>
 				</div>
 			</div>
 		</div>
