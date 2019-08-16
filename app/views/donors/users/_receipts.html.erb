@@ -2,4 +2,5 @@
 	<p> <%= index+1 %>. Receipt number: <%= receipt.number %> </p>
 	<p> Amount you donated is: <%= receipt.donation.amount %>$ </p>
 	<br>
+	<%= link_to "download", download_pdf_donors_user_path %>
 <% end %>

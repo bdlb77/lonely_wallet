@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       member do
         get 'dashboard'
         get 'receipts'
+        get 'download_pdf'
       end
     end
   end
