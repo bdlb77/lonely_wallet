@@ -8,7 +8,12 @@ class Donors::UsersController < ApplicationController
 	end
 
 	def receipts
-		@receipts = TaxReceipt.all
+		@address = Address.find_by(user_id: current_user.id)
+		@donations = Donation.where(user: current_user)
+		@receipts = []
+		@donations.each do |donation|
+			@receipts << TaxReceipt.find_by(donation_id: donation)
+		end
 	end
 
 end

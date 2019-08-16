@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'pages#home'
   resources :charges
@@ -22,4 +23,5 @@ Rails.application.routes.draw do
       end
     end
   end
+
 end
