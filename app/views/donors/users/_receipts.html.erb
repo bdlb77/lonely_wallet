@@ -5,7 +5,7 @@
 		<% @receipts.each do |receipt| %>
 			<div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mx-3">
 				<div class="card border-primary mb-3" style="max-width: 30rem;">
-				  <div class="card-header d-flex justify-content-between"> 
+				  <div class="card-header d-flex justify-content-between">
 				  	<div>
 				  		Receipt number: <%= receipt.number %>
 				  		<br>
@@ -17,9 +17,11 @@
 				    <p class="card-text mb-1"> <strong> Biling address </strong>: <%= @address.address %> </p>
 				    <p class="card-text mb-1"> <%= @address.city %>, <%= @address.state %> </p>
 				    <p class="card-text"> <%= @address.zip %> </p>
-				    <div class="d-flex justify-content-center">
-				    <h4 class="card-text"> Donated to <strong> Lonely Wallet </strong> in the amount of <%= receipt.donation.amount %>$ </h4>
-				    <%= link_to "Download", root_path %>
+				    <div class="d-flex justify-content-center">				 
+				    	<h4 class="card-text"> Donated to <em> Lonely Wallet </em> in the amount of <strong> $<%= number_with_precision(receipt.donation.amount, :precision => 2, :delimiter => ',') %> </strong> </h4>
+				    	<div class="d-flex align-items-end">
+				    		<%= link_to "Download", root_path, class: 'btn btn-primary' %>
+				    	</div>
 				    </div>
 				  </div>
 				</div>
