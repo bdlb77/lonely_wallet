@@ -1,0 +1,53 @@
+.donor__dashboard {
+  max-height: calc(100vh - 58px);
+  height: calc(100vh - 58px);
+  &__sidebar {
+    background-color: $secondary;
+    height: calc(100vh - 58px);
+
+
+    &-head {
+      a {
+        width: 60%;
+        margin: 0 auto;
+        padding: 1rem 0;
+      }
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      i {
+        font-size: 56px;
+        
+      }
+    }
+
+    &-tabs {
+      .sidebar-tab {
+        cursor: pointer;
+      }
+      margin: 0 auto;
+      width: 40%;
+       .tab_active {
+        border-bottom: 4px solid $primary;
+      }
+      height: 40%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &-content {
+      &-section {
+        display: none;
+        &.section_active {
+          display: block;
+        }
+      }
+
+    }
+
+    &-bottom {
+      height: 30%;
+    }
+  }
+}
