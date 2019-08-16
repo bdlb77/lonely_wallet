@@ -10,9 +10,10 @@ class Donors::UsersController < ApplicationController
 		@receipts = []
 		@total_donation = 0
 		@donations.each do |donation|
-			@receipts << TaxReceipt.find_by(donation_id: donation)
+			@receipts << donation.tax_receipts
 			@total_donation += donation.amount
 		end
+		@receipts = @receipts.flatten.uniq
 	end
 
 	def receipts
