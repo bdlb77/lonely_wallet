@@ -1,18 +1,24 @@
 // Specific CSS for your home-page
 .home{
-	min-height: 93vh;
-	width: 99vw;
+	min-height: 100vh;
+	width: 100vw;
 	background-color: #ADB5BD;
 }
 
 .home_text{
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	height: 100%;
 	h1{
 		font-size: 4rem;
 	}
 	p{
 		font-size: 1.5rem;	
+		margin-bottom: 2rem;
 	}
+
 }
 
 
