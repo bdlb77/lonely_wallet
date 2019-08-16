@@ -1,9 +1,3 @@
-<% receipts.each_with_index do |receipt, index| %>
-	<p> <%= index+1 %>. Receipt number: <%= receipt.number %> </p>
-	<p> Amount you donated is: <%= receipt.donation.amount %>$ </p>
-	<br>
-	<%= link_to "download", download_pdf_donors_user_path %>
-<% end %>
 <div class="container my-4">
 	<h1 class="text-center mb-4"> Your receipts </h1>
 	<div class="row">
