@@ -69,27 +69,45 @@ puts "Finished generating addresses"
 
 puts "Generating donations"
 
-bill_one_million = Donation.create!(amount: 1000000,
+bill_ten_thou = Donation.create!(amount: 10000,
 														 user: bill)
 
-bill_half_mil = Donation.create!(amount: 500000,
+bill_five_thou = Donation.create!(amount: 5000,
 														 user: bill)
 
-elon_half_mil = Donation.create!(amount: 500000,
+bill_one_thou = Donation.create!(amount: 1000,
+														 user: bill)
+
+bill_one_thou_2 = Donation.create!(amount: 1000,
+														 user: bill)
+
+elon_five_thou = Donation.create!(amount: 5000,
+														user: elon)
+
+elon_two_thou = Donation.create!(amount: 2000,
 														user: elon)
 
 puts "Finished generating donations"
 
 puts "Generating tax receipts"
 
-bill_receipt = TaxReceipt.create!(number: 100101,
-																	donation: bill_one_million)
+bill_receipt = TaxReceipt.create!(number: 101,
+																	donation: bill_ten_thou)
 
-elon_receipt = TaxReceipt.create!(number: 100102,
-																	donation: elon_half_mil)
+elon_receipt = TaxReceipt.create!(number: 102,
+																	donation: elon_five_thou)
 
-bill_receipt = TaxReceipt.create!(number: 100103,
-																	donation: bill_half_mil)
+bill_receipt2 = TaxReceipt.create!(number: 103,
+																	donation: bill_five_thou)
+
+bill_receipt3 = TaxReceipt.create!(number: 104,
+																	donation: bill_one_thou)
+
+bill_receipt4 = TaxReceipt.create!(number: 105,
+																	donation: bill_one_thou_2)
+
+elon_receipt2 = TaxReceipt.create!(number: 106,
+																	donation: elon_two_thou)
 
 puts "Finished generating tax receipts"
 
