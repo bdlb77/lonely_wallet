@@ -7,6 +7,9 @@
 <div class="container my-4">
 	<h1 class="text-center mb-4"> Your receipts </h1>
 	<div class="row">
+		<% if @receipts.blank? %>
+			<h4>There are no Receipts.</h4>
+		<% else %>
 		<% @receipts.each do |receipt| %>
 			<div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mx-3">
 				<div class="card border-primary mb-3" style="max-width: 30rem;">
@@ -31,6 +34,7 @@
 				  </div>
 				</div>
 			</div>
+		<% end %>
 		<% end %>
 	</div>
 </div>
